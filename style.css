@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 43.75em) {
+    html {
+      font-size: 53%; } }
+  @media only screen and (max-width: 31.25em) {
+    html {
+      font-size: 48%; } }
+
+@keyframes boxShadowGlow {
+  from {
+    box-shadow: 0 0.3rem 0.5rem rgba(255, 255, 255, 0.6); }
+  to {
+    box-shadow: 0 0.3rem 1rem white; } }
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes formLoading {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes formLoadingEnd {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes errorShow {
+  from {
+    transform: translateY(50%);
+    visibility: hidden; }
+  to {
+    transform: translateY(0);
+    visibility: visible; } }
+
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.loader {
+  border: 1.5rem solid transparent;
+  border-radius: 50%;
+  border-top: 1.2rem solid #333;
+  width: 15rem;
+  height: 15rem;
+  animation: loading 1.2s ease infinite;
+  z-index: 5; }
+
+.loading-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #eeaeca;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; }
+  .loading-end__text {
+    font-size: 4rem;
+    font-family: "Abril Fatface", cursive;
+    letter-spacing: 0.1rem; }
+
+.footer {
+  background-color: #ff0033;
+  overflow: hidden; }
+  .footer-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 1rem; }
+  .footer li {
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Abril Fatface", cursive;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem; }
+  .footer li span {
+    font-size: 1.8rem; }
+  .footer-link {
+    color: #fff; }
+
+.form {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 3rem;
+  height: 95vh;
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+  backface-visibility: hidden;
+  flex: 1 1 1; }
+  .form-form {
+    width: 50%;
+    max-width: 50rem;
+    padding: 1rem; }
+    @media only screen and (max-width: 31.25em) {
+      .form-form {
+        width: 90%; } }
+    @media only screen and (max-width: 21.875em) {
+      .form-form {
+        width: 99%; } }
+  .form label {
+    display: block;
+    margin: 2rem 0 0.3rem 0;
+    text-transform: capitalize;
+    font-family: "Abril Fatface", cursive;
+    color: #333; }
+  .form input,
+  .form input:visited,
+  .form input:focus {
+    outline: none;
+    height: 4rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #fff;
+    border-radius: 0.6rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+    font-weight: 600;
+    padding: 1rem;
+    color: #333;
+    animation: boxShadowGlow 1s linear infinite alternate; }
+    .form input::placeholder,
+    .form input:visited::placeholder,
+    .form input:focus::placeholder {
+      background-color: transparent; }
+  .form-button, .form-button:visited, .form-button:active {
+    padding: 1rem;
+    margin-top: 4rem;
+    width: 60%;
+    border-radius: 0.6rem;
+    outline: none;
+    border: none;
+    background-color: #ff0033;
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Abril Fatface", cursive;
+    transition: transform 0.2s linear;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.6);
+    cursor: pointer; }
+    .form-button:hover, .form-button:visited:hover, .form-button:active:hover {
+      transform: translateY(-5%);
+      box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.4); }
+  .form-error {
+    margin: 5% auto;
+    text-transform: capitalize;
+    font-size: 2.3rem;
+    color: #ff0033;
+    font-weight: 400;
+    padding: 2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    word-wrap: break-word; }
+
+.formAnimation {
+  animation: formLoading 2.5s ease-in; }
+
+.formAnimationEnd {
+  animation: formLoadingEnd 2s ease; }
+
+.errorShow {
+  animation: errorShow 0.3s linear; }
