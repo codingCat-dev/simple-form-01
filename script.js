@@ -1,4 +1,6 @@
 'use strict';
+
+function init() {
 // Loading Screen
 const loadingScreen = document.querySelector('.loading-screen');
 const footer = document.querySelector('.footer');
@@ -70,3 +72,5 @@ inputForm.addEventListener('submit', e => {
     }, 1500);
   });
 });
+}
+init();
