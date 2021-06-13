@@ -30,8 +30,8 @@ inputForm.addEventListener('submit', e => {
   if (inputName.value.length <= 6) {
     errorMessages.push('Name must be at least 6 characters long');
   }
-  if (inputName.value.length >= 14) {
-    errorMessages.push('Name must be less than 14 characters long');
+  if (inputName.value.length >= 30) {
+    errorMessages.push('Name must be less than 30 characters long');
   }
 
   if (inputPassword.value.length <= 6) {
